@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <title>GSAP - ScrollTrigger</title>
+  <style>
+    #main {
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    #main .left-door {
+      width: 50%;
+      height: 100%;
+      filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    #main .right-door {
+      width: 50%;
+      height: 100%;
+      filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    #main .left-door img,
+    #main .right-door img,
+    #main .bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    #main .bg {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    #main .bg img {
+      transform-origin: top;
+    }
+
+    #main .princess {
+      margin: auto;
+      width: 600px;
+      height: 800px;
+      position: relative;
+      top: 50%;
+    }
+
+    #main .princess img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="main">
+    <div class="bg"><img src="./images/fantasy-bg.jpg"></div>
+    <div class="princess"><img src="./images/fantasy-princess.png"></div>
+    <div class="left-door"><img src="./images/fantasy-left-door.png"></div>
+    <div class="right-door"><img src="./images/fantasy-right-door.png"></div>
+  </div>
+
+  <section id="section01">
+    <div class="container">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Est cumque tempora minus itaque, repellat rem facere pariatur. Iure, esse magnam. Numquam,
+      voluptate nostrum? Magni cum maxime dignissimos aut natus ullam nihil asperiores impedit doloribus veritatis corrupti possimus quasi corporis, saepe
+      reprehenderit accusantium debitis tempora nisi minima accusamus cumque. Corporis quas ex quo odit quod mollitia? Sequi molestias tempore obcaecati qui
+      voluptate dolor numquam tempora molestiae, laudantium eveniet quas similique et aliquid quibusdam alias minima esse doloribus eum neque, repudiandae
+      distinctio recusandae odit praesentium officiis. Sequi expedita quidem placeat dignissimos, provident porro error, modi dicta quas ea aliquam molestiae
+      dolore reprehenderit magnam molestias vel accusantium dolor corporis. Mollitia sed a alias velit, voluptatem, praesentium quam id culpa quod, facilis
+      nobis! Cum dolorum architecto quos, totam dolor odit, eos illum obcaecati earum amet, impedit cupiditate? Modi, recusandae possimus deserunt asperiores
+      dolore rem deleniti accusantium dolores expedita eum consequatur quaerat officiis at rerum in eos soluta non distinctio aliquam vero facere labore
+      accusamus? Nobis asperiores nam officiis a harum, est natus culpa modi voluptatibus explicabo quae nesciunt minima adipisci. Veritatis, est sunt
+      voluptatum praesentium odit reiciendis laboriosam quasi consequatur ullam possimus facere fugiat hic provident error quaerat dolor esse cumque assumenda
+      aliquam, labore a. Hic perferendis veniam magnam repudiandae repellat adipisci, quam doloremque aliquid, natus facilis nihil error pariatur quasi quas
+      culpa fugiat voluptate excepturi sed explicabo reprehenderit autem amet asperiores iure. Commodi non unde, corporis eligendi asperiores exercitationem
+      pariatur labore a ratione quis nemo nostrum corrupti! Praesentium et delectus omnis perspiciatis. Esse, dolores! Provident numquam fuga, autem voluptate
+      obcaecati iusto hic dignissimos in enim ut quo modi animi labore odit exercitationem debitis quod perferendis veniam necessitatibus, molestiae non iure
+      molestias quia. Vel, ea quas velit officia in ab facilis perferendis eveniet aperiam harum deleniti totam ratione maxime. Laboriosam neque iure est
+      sapiente quam reiciendis excepturi tempore minima cum? Ea assumenda, placeat porro ab dicta aperiam minus quis hic blanditiis, voluptatem odit quaerat,
+      quos magnam. Nostrum, delectus est deserunt sapiente laboriosam adipisci unde dicta repellendus ex illum nam libero provident dignissimos quam rerum
+      nesciunt quibusdam consequuntur modi voluptas incidunt accusamus vel ratione ea quaerat. Corporis, aspernatur eaque! Eveniet ut consequuntur repellendus
+      vero voluptatibus fuga laudantium voluptates repudiandae veritatis accusantium ratione autem nisi, aut distinctio. Nostrum officiis ea ipsum et debitis
+      numquam iusto, magnam ipsam alias. Modi beatae animi dolorem pariatur numquam debitis ipsum excepturi magnam eum cum ipsam harum autem, amet, voluptatem
+      sit obcaecati rerum quidem totam, omnis ratione? Consectetur adipisci ipsam incidunt ullam deleniti, perspiciatis ea. Iste autem et deserunt distinctio
+      enim, fugit, unde maxime ut necessitatibus quia minus qui nihil sapiente officiis. Facere blanditiis quos vero tempora harum et nemo suscipit mollitia
+      quaerat quod modi, repudiandae ab incidunt dolore numquam eveniet perferendis. Expedita, minus fugiat. Consequuntur voluptas ipsum minus saepe soluta
+      aliquid corporis temporibus provident similique. Obcaecati at veniam reprehenderit voluptatibus tempora et sequi, rerum amet itaque! Excepturi est maxime
+      iure vitae voluptatem repudiandae deserunt adipisci atque facilis nulla aut minus, eum laudantium architecto nesciunt dolores debitis mollitia suscipit,
+      obcaecati vero. Enim ipsum necessitatibus, amet alias pariatur quae dolore nihil rerum quia consequatur quod nisi molestiae excepturi magni deleniti
+      dolorem accusantium nesciunt illum! Nesciunt nulla assumenda perspiciatis ea doloribus consectetur ducimus, quasi nam quisquam veniam modi animi optio.
+      Explicabo eum quos expedita fugiat in! Facilis enim dolor ex repellendus sapiente. Aut tempora nulla modi quibusdam sed pariatur eveniet, mollitia nostrum
+      quo quam inventore illo rem cupiditate aliquid possimus totam magni consequuntur adipisci libero ipsam fugit nihil porro temporibus a? Excepturi quos
+      quibusdam nesciunt architecto eveniet dicta voluptatibus rem voluptates ducimus laboriosam! Mollitia odit tenetur id eligendi beatae esse repellendus
+      dolorum nostrum alias necessitatibus sunt impedit, unde ducimus harum vitae iusto distinctio ipsam magni rerum qui tempore cumque. Provident officia
+      cumque vero nisi quaerat amet in! Tempore repellat unde explicabo dolor quibusdam ab modi, non facilis. Recusandae enim quae possimus sint ea quidem quia
+      doloribus perferendis culpa cupiditate illo rem, animi, sunt, minima blanditiis repellendus voluptatibus molestias commodi repudiandae quas aspernatur?
+      Quia ducimus nulla ea ad dolore? Quas natus fugiat corrupti deserunt fugit iusto, similique modi animi soluta facere explicabo. A recusandae distinctio
+      minima sed at debitis dolorum, tenetur autem error. Ullam nulla laborum consequuntur praesentium possimus ipsum voluptate recusandae suscipit officia iste
+      ad, veniam quidem delectus dolorem exercitationem ducimus qui asperiores quia debitis consequatur tempore eos deserunt sit. Quae dolorum quo nemo eius
+      animi voluptatum, consequuntur eligendi! Eaque nihil delectus expedita aliquam dolorem accusamus eos asperiores tempora officiis, nostrum quo ad porro
+      adipisci est dolorum temporibus nesciunt consequuntur facere deserunt debitis possimus. Sit labore quod, dignissimos illum error laudantium aperiam,
+      cumque quia eaque ea earum itaque ex perspiciatis saepe officia? Reprehenderit obcaecati deserunt quia itaque id debitis corrupti, ullam esse fuga nostrum
+      maxime minus beatae totam, quos similique quibusdam! Non id incidunt ratione eveniet in iure deleniti ut temporibus consequatur, eum alias quis, omnis
+      amet quidem, dicta blanditiis quae. Sequi vel distinctio ex quod numquam expedita impedit at. Numquam sapiente reiciendis labore fugit laudantium!
+      Possimus, deleniti. Libero facilis fugiat labore, rerum, id veniam deleniti quisquam eaque eius sequi eligendi praesentium. Assumenda neque fuga placeat.
+      Eius, velit maxime facilis consequatur perspiciatis debitis ullam vel dignissimos commodi recusandae rem? Dolor dolorem nemo eveniet ratione non. Atque
+      rem vitae velit est placeat veritatis itaque maiores eos commodi officiis dignissimos animi obcaecati, optio ipsam aspernatur odio sequi voluptatum
+      voluptas dolorum unde! Illum nostrum, nihil, aperiam rem perferendis dolores corporis in possimus, cum modi eligendi illo eaque suscipit aut? Laborum
+      facere voluptatibus sunt recusandae sint quod atque explicabo in itaque ad ea possimus fugiat amet, aspernatur et qui sequi fuga molestiae ut? Veniam nemo
+      quod sapiente tenetur aperiam aut facere, nesciunt quasi cupiditate, libero dolor minima labore cumque deleniti ab quam facilis totam? Assumenda atque
+      ipsa suscipit repellendus similique accusantium itaque doloremque, fugit non eaque deserunt ratione! Molestias accusamus illo magnam, enim dolores
+      temporibus soluta eos tempore voluptates! Quos quis animi debitis numquam? Itaque hic rem ut repellendus perferendis laboriosam saepe amet dolor corporis
+      veritatis mollitia, nemo, modi voluptate! Odio, ut necessitatibus enim eaque esse alias!
+    </div>
+  </section>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.js'></script>
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <!-- gsap 主程式 -->
+  <script src="./gsap/gsap.js"></script>
+  <!-- gsap plugins，必須在 gsap 主程式之後 -->
+  <script src="./gsap/ScrollTrigger.js"></script>
+
+  <script>
+    // 註冊套件
+    gsap.registerPlugin(ScrollTrigger)
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#main',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true,
+        markers: true
+      }
+    })
+
+    tl
+      .to('.left-door', {
+        xPercent: -100
+      })
+      .to('.right-door', {
+        xPercent: 100
+      }, '<')
+      .to('.princess', {
+        scale: 1.3,
+        y: 150
+      }, '<')
+      .to('.bg img', {
+        scale: 2,
+        y: 300
+      }, '<')
+  </script>
+</body>
+
+</html>

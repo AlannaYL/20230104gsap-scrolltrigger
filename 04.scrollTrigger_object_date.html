@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <title>GSAP - ScrollTrigger</title>
+  <style>
+    body {
+      height: 100vh;
+    }
+
+    section {
+      height: 100vh;
+      background: lightpink;
+      position: relative;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    section:nth-child(odd) {
+      background: lightcyan;
+    }
+
+    section:nth-child(even) {
+      background: lightgray;
+    }
+
+    #date {
+      height: 5rem;
+      display: none;
+      font-size: 5rem;
+    }
+  </style>
+</head>
+
+<body>
+  <section></section>
+
+  <section id="section01">
+    <div id="date"></div>
+  </section>
+
+  <section></section>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.js'></script>
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <!-- gsap 主程式 -->
+  <script src="./gsap/gsap.js"></script>
+  <!-- gsap plugins，必須在 gsap 主程式之後 -->
+  <script src="./gsap/ScrollTrigger.js"></script>
+
+  <script>
+    // 註冊套件
+    gsap.registerPlugin(ScrollTrigger)
+
+    const date = {
+      year: new Date().getFullYear(),
+      month: new Date().getMonth() + 1,
+      day: new Date().getDate()
+    }
+
+    gsap.from(date, {
+      scrollTrigger: {
+        trigger: '#section01',
+        start: 'top center',
+        end: 'bottom center',
+        toggleActions: 'play none none reset',
+        onEnter() {
+          $('#date').css({ display: 'block' })
+        },
+        onLeave() {
+          $('#date').css({ display: 'none' })
+        },
+        markers: true
+      },
+      onUpdate() {
+        $('#date').text(`${date.year.toFixed(0)} / ${date.month.toFixed(0)} / ${date.day.toFixed(0)}`)
+      },
+      year: 0,
+      month: 0,
+      day: 0,
+      duration: 10,
+      ease: 'none'
+    })
+
+
+  </script>
+</body>
+
+</html>
